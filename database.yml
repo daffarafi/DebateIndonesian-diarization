@@ -1,22 +1,19 @@
 Databases:
-  # tell pyannote.database where to find Debate audio files.
-  # {uri} is a placeholder for the session name (eg. debate_001).
-  # you might need to update this line to fit your own setup.
-  DebateIndonesian: ./audio/{uri}.wav
+  DebateIndonesianLarge: dataset_debate_large\audio/{uri}.wav
 
 Protocols:
-  DebateIndonesian:
+  DebateIndonesianLarge:
     SpeakerDiarization:
       Default:
         train:
-          uri: ./lists/train.meetings.txt
-          annotation: ./rttms/train/{uri}.rttm
-          annotated: ./uems/train/{uri}.uem
+            uri: dataset_debate_large\lists/train.meetings.txt
+            annotation: dataset_debate_large\rttms/train/{uri}.rttm
+            annotated: dataset_debate_large\uems/train/{uri}.uem
         development:
-          uri: ./lists/dev.meetings.txt
-          annotation: ./rttms/dev/{uri}.rttm
-          annotated: ./uems/dev/{uri}.uem
+            uri: dataset_debate_large\lists/dev.meetings.txt
+            annotation: dataset_debate_large\rttms/dev/{uri}.rttm
+            annotated: dataset_debate_large\uems/dev/{uri}.uem
         test:
-          uri: ./lists/test.meetings.txt
-          annotation: ./rttms/test/{uri}.rttm
-          annotated: ./uems/test/{uri}.uem
+            uri: dataset_debate_large\lists/test.meetings.txt
+            annotation: dataset_debate_large\rttms/test/{uri}.rttm
+            annotated: dataset_debate_large\uems/test/{uri}.uem

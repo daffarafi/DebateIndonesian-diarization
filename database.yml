@@ -1,0 +1,22 @@
+Databases:
+  # tell pyannote.database where to find Debate audio files.
+  # {uri} is a placeholder for the session name (eg. debate_001).
+  # you might need to update this line to fit your own setup.
+  DebateIndonesian: ./audio/{uri}.wav
+
+Protocols:
+  DebateIndonesian:
+    SpeakerDiarization:
+      Default:
+        train:
+          uri: ./lists/train.meetings.txt
+          annotation: ./rttms/train/{uri}.rttm
+          annotated: ./uems/train/{uri}.uem
+        development:
+          uri: ./lists/dev.meetings.txt
+          annotation: ./rttms/dev/{uri}.rttm
+          annotated: ./uems/dev/{uri}.uem
+        test:
+          uri: ./lists/test.meetings.txt
+          annotation: ./rttms/test/{uri}.rttm
+          annotated: ./uems/test/{uri}.uem
